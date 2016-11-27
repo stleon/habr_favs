@@ -3,10 +3,15 @@ import scrapy
 
 class FavsSpider(scrapy.Spider):
     name = "favs"
-    start_urls = [
-        'https://habrahabr.ru/users/stleon/favorites/',
-        'https://geektimes.ru/users/stleon/favorites/'
-    ]
+
+    def start_requests(self):
+        user = self.settings.get('HABR_USER')
+        start_urls = [
+            'https://habrahabr.ru/users/%s/favorites/' % user,
+            'https://geektimes.ru/users/%s/favorites/' % user
+        ]
+        for url in start_urls:
+            yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
 

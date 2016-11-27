@@ -1,19 +1,9 @@
-# -*- coding: utf-8 -*-
-
-# Scrapy settings for favs project
-#
-# For simplicity, this file contains only settings considered important or
-# commonly used. You can find more settings consulting the documentation:
-#
-#     http://doc.scrapy.org/en/latest/topics/settings.html
-#     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-#     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
-
 BOT_NAME = 'favs'
 
 SPIDER_MODULES = ['favs.spiders']
 NEWSPIDER_MODULE = 'favs.spiders'
 
+HABR_USER = 'stleon'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'favs (+http://www.yourdomain.com)'

@@ -1,1 +1,1 @@
-scrapy crawl favs -o tags.csv
+scrapy crawl favs -o tags.csv -s HABR_USER=lol
