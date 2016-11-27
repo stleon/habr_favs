@@ -1,0 +1,1 @@
+scrapy crawl favs -o tags.csv
