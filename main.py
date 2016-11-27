@@ -15,6 +15,6 @@ wordcloud = WordCloud(
     height=1800,
     scale=1,
     font_path='/Library/Fonts/Verdana.ttf',
-    max_words=10000).generate_from_frequencies(tags.items())
+    max_words=len(tags.keys())).generate_from_frequencies(tags.items())
 
 wordcloud.to_file('test.png')
