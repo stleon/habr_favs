@@ -3,7 +3,10 @@ import scrapy
 
 class FavsSpider(scrapy.Spider):
     name = "favs"
-    start_urls = ['https://habrahabr.ru/users/stleon/favorites/', ]
+    start_urls = [
+        'https://habrahabr.ru/users/stleon/favorites/',
+        'https://geektimes.ru/users/stleon/favorites/'
+    ]
 
     def parse(self, response):
 
@@ -21,4 +24,4 @@ class FavsSpider(scrapy.Spider):
         tags = response.xpath(
             './/div[@class="post__tags"]/ul/li//a/text()').extract()
         for tag in tags:
-            self.log(tag)
+            yield {'name': tag, }
