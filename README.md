@@ -3,6 +3,8 @@
 ## Установка
 
 ```
+git clone https://github.com/stleon/habr_favs.git
+cd habr_favs
 pyvenv-3.5 venv
 source venv/bin/activate
 pip install -r requirements.txt

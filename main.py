@@ -4,7 +4,7 @@ from wordcloud import WordCloud
 
 tags = {}
 
-with open('favs/tags.csv', 'r') as f:
+with open('tags.csv', 'r') as f:
     for row in csv.reader(f):
         tag = ''.join(row).lower()
         tags[tag] = 1 + tags.get(tag, 0)
