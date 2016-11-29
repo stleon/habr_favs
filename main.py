@@ -1,13 +1,14 @@
 import csv
+from collections import defaultdict
 
 from wordcloud import WordCloud
 
-tags = {}
+tags = defaultdict(int)
 
 with open('tags.csv', 'r') as f:
     for row in csv.reader(f):
         tag = ''.join(row).lower()
-        tags[tag] = 1 + tags.get(tag, 0)
+        tags[tag] += 1
 
 
 wordcloud = WordCloud(
