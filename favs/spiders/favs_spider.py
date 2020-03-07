@@ -7,8 +7,7 @@ class FavsSpider(scrapy.Spider):
     def start_requests(self):
         user = self.settings.get('HABR_USER')
         start_urls = [
-            'https://habrahabr.ru/users/%s/favorites/' % user,
-            'https://geektimes.ru/users/%s/favorites/' % user
+            'https://habr.com/ru/users/%s/favorites/' % user
         ]
         for url in start_urls:
             yield scrapy.Request(url=url, callback=self.parse)
@@ -27,6 +26,6 @@ class FavsSpider(scrapy.Spider):
 
     def parse_topic(self, response):
         tags = response.xpath(
-            './/div[@class="post__tags"]/ul/li//a/text()').extract()
+            './/dd[@class="post__tags-list"]/ul/li//a/text()').extract()
         for tag in tags:
             yield {'name': tag, }

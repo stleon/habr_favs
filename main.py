@@ -12,10 +12,10 @@ with open('tags.csv', 'r') as f:
 
 
 wordcloud = WordCloud(
-    width=2880,
-    height=1800,
+    width=4096,
+    height=2304,
     scale=1,
     font_path='/Library/Fonts/Verdana.ttf',
-    max_words=len(tags.keys())).generate_from_frequencies(tags.items())
+    max_words=len(tags.keys())).generate_from_frequencies(tags)
 
 wordcloud.to_file('test.png')
