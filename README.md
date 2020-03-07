@@ -5,8 +5,10 @@
 ```
 git clone https://github.com/stleon/habr_favs.git
 cd habr_favs
-pyvenv-3.5 venv
+python3.7 -m venv venv
 source venv/bin/activate
+# for MAC OS
+# export MACOSX_DEPLOYMENT_TARGET=10.15
 pip install -r requirements.txt
 ```
 
